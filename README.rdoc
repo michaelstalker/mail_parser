@@ -17,7 +17,8 @@ methods of your new email object.
 * We don't need to optimize for speed
 * Email body is separated from header by one blank line
 * No multi-line fields in email header
-* There's only one Received: field.
+* There's only one Received: field
+* We don't need to access every field in the email header
 
 == Things I'd Focus on Next
 * Separate name from email address in To: and From: fields
