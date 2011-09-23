@@ -1,0 +1,10 @@
+= Welcome to GangstaMail
+
+This is a simple email parser. It is primarily for demonstration purposes, as it
+makes some assumptions for the sake of simplicity. Some of these assumptions are
+faulty. This program assumes:
+
+* We don't need to optimize for speed
+* Email body is separated from header by one blank line
+* No multi-line fields in email header
+* There's only one Received: field.
