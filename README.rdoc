@@ -4,6 +4,15 @@ This is a simple email parser. It is primarily for demonstration purposes, as it
 makes some assumptions for the sake of simplicity. Some of these assumptions are
 faulty.
 
+== Usage
+Require the necessary files in your project, and instantiate a new Email object:
+
+    email = GangstaMail::Email.new(your_raw_email_text)
+
+You can then access the email fields through the accessor methods and instance
+methods of your new email object.
+
+
 == Assumptions
 * We don't need to optimize for speed
 * Email body is separated from header by one blank line
