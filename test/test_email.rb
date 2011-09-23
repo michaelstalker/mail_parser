@@ -54,31 +54,31 @@ My special power is that I'm terriby mysterious.)
       assert_equal(@email.body, BODY)
     end
     
-    should 'save @from' do
+    should 'return from field' do
       assert_equal(@email.from, 'Mr. Furious <mr.furious@example.com>')
     end
     
-    should 'save @date' do
+    should 'return date' do
       assert_equal(@email.date, 'Thu, 22 Sep 2011 21:21:36 -0400')
     end
     
-    should 'save @to' do
+    should 'return to' do
       assert_equal(@email.to, 'The Sphinx <the.sphinx@example.com>')
     end
     
-    should 'save @subject' do
+    should 'return subject' do
       assert_equal(@email.subject, 'test')
     end
     
-    should 'save @cc' do
+    should 'return cc' do
       assert_equal(@email.cc, 'The Spleen <the.spleen@example.com>')
     end
     
-    should 'save @content_type' do
+    should 'return content_type' do
       assert_equal(@email.content_type, 'text/plain; charset=ISO-8859-1')
     end
         
-    should 'save @reply_to' do
+    should 'return reply_to' do
       assert_equal(@email.reply_to, 'blue.raja@example.com')
     end
   end

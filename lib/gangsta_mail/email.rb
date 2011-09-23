@@ -20,7 +20,7 @@ module GangstaMail
       @subject = header_fields[:subject]
       @cc = header_fields[:cc]
       @content_type = header_fields[:content_type]
-      @reply_to = header_fields[:reply_to]      
+      @reply_to = header_fields[:reply_to]
     end
     
     def header
