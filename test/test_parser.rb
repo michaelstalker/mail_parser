@@ -5,7 +5,7 @@ require_relative '../lib/gangsta_mail/parser'
 
 class TestParser < Test::Unit::TestCase
   
-  EMAIL = %(MIME-Version: 1.0
+  RAW_EMAIL = %(MIME-Version: 1.0
 Received: by 10.236.95.44 with HTTP; Thu, 22 Sep 2011 18:21:36 -0700 (PDT)
 Date: Thu, 22 Sep 2011 21:21:36 -0400
 Delivered-To: mr.furious@example.com
@@ -30,7 +30,7 @@ From: Mr. Furious <mr.furious@example.com>
 To: The Sphinx <the.sphinx@example.com>
 Content-Type: text/plain; charset=ISO-8859-1)
 
-    fetched_header = GangstaMail::Parser.fetch_header EMAIL
+    fetched_header = GangstaMail::Parser.fetch_header RAW_EMAIL
     assert_equal(fetched_header, original_header)
   end
 
@@ -39,7 +39,7 @@ Content-Type: text/plain; charset=ISO-8859-1)
 
 My special power is that I'm terriby mysterious.)
     
-    fetched_body = GangstaMail::Parser.fetch_body EMAIL
+    fetched_body = GangstaMail::Parser.fetch_body RAW_EMAIL
     assert_equal(fetched_body, original_body)
   end
   
@@ -53,15 +53,15 @@ Subject: test
 From: Mr. Furious <mr.furious@example.com>
 To: The Sphinx <the.sphinx@example.com>
 Content-Type: text/plain; charset=ISO-8859-1)
-    original_fields = { :'mime-version' => '1.0',
+    original_fields = { :mime_version => '1.0',
                :received => 'by 10.236.95.44 with HTTP; Thu, 22 Sep 2011 18:21:36 -0700 (PDT)',
                :date => 'Thu, 22 Sep 2011 21:21:36 -0400',
-               :'delivered-to' => 'mr.furious@example.com',
-               :'message-id' => '<CACy8cYDTK0_ra68Wb_X99doKQDErZKNn+8VOVahV6_fdbTdq7A@mail.example.com>',
+               :delivered_to => 'mr.furious@example.com',
+               :message_id => '<CACy8cYDTK0_ra68Wb_X99doKQDErZKNn+8VOVahV6_fdbTdq7A@mail.example.com>',
                :subject => 'test',
                :from => 'Mr. Furious <mr.furious@example.com>',
                :to => 'The Sphinx <the.sphinx@example.com>',
-               :'content-type' => 'text/plain; charset=ISO-8859-1' }
+               :content_type => 'text/plain; charset=ISO-8859-1' }
     fetched_fields = GangstaMail::Parser.parse_header header
     assert_equal(fetched_fields, original_fields)
   end
