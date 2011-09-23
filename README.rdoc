@@ -14,15 +14,20 @@ methods of your new email object.
 
 
 == Assumptions
-* We don't need to optimize for speed
-* Email body is separated from header by one blank line
-* No multi-line fields in email header
-* There's only one Received: field
-* We don't need to access every field in the email header
+* We don't need to optimize for speed.
+* Email body is separated from header by one blank line.
+* There are no multi-line fields in email header.
+* There's only one Received field. The code shouldn't break if there are.
+  several Received fields, but I'm not keeping track of them all.
+* We don't need to access every field in the email header.
+* The raw email does not start with sevaral newline characters.
 
 == Things I'd Focus on Next
+* Create a command-line interface to read text files with the raw email text
 * Separate name from email address in To: and From: fields
 * Handle multi-line values in header
 * Handle different MIME parts in the body
 * Parse nested parts of body
 * Handle attachments
+
+I'd also gemify this code to make it easier for people to use.
