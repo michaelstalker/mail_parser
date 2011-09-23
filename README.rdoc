@@ -2,9 +2,17 @@
 
 This is a simple email parser. It is primarily for demonstration purposes, as it
 makes some assumptions for the sake of simplicity. Some of these assumptions are
-faulty. This program assumes:
+faulty.
 
+== Assumptions
 * We don't need to optimize for speed
 * Email body is separated from header by one blank line
 * No multi-line fields in email header
 * There's only one Received: field.
+
+== Things I'd Focus on Next
+* Separate name from email address in To: and From: fields
+* Handle multi-line values in header
+* Handle different MIME parts in the body
+* Parse nested parts of body
+* Handle attachments
